@@ -18,12 +18,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.R
+import com.example.myapplication.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            FuelCalculatorScreen()
+            AppTheme {
+                FuelCalculatorScreen()
+            }
         }
     }
 }
@@ -43,7 +46,7 @@ fun FuelCalculatorScreen() {
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxSize()
-                .background(Color(0xFFD1D2E9)),
+                .background(MaterialTheme.colorScheme.background),
             verticalArrangement = Arrangement.spacedBy(10.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
